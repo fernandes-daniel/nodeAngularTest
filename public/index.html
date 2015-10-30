@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phoneApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Node Test</title>
+    <script src="javascripts/angular/angular.js"></script>
+    <script src="javascripts/nodeTest/index.js"></script>
+</head>
+<body>
+<h2>{{modelInRoot}}</h2>
+<div ng-controller="PhoneListCtrl">
+    <h2>List of phones</h2>
+    <input type="text" ng-model="phoneFilter">
+    <table ng-repeat="phone in phones | filter : phoneFilter | orderBy : orderProp">
+        <tr>
+            <td>{{phone.name}}</td>
+            <td>{{phone.number}}</td>
+        </tr>
+    </table>
+    <div data-hello-world></div>
+    <div ng-controller="ChildController">
+        {{modelCloneOfParent}}
+    </div>
+</div>
+</body>
+</html>
